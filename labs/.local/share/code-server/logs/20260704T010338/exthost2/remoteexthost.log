@@ -1,0 +1,9 @@
+2026-07-04 01:04:46.013 [info] Extension host with pid 2515 started
+2026-07-04 01:04:46.103 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2026-07-04 01:04:46.116 [info] Lock '/home/csapp/.local/share/code-server/User/workspaceStorage/1847362f/vscode.lock': Lock acquired.
+2026-07-04 01:04:46.143 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-07-04 01:04:46.161 [info] Eager extensions activated
+2026-07-04 01:04:46.162 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-07-04 01:04:46.163 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-07-04 01:04:46.569 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2026-07-04 01:05:02.519 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'

@@ -1,0 +1,17 @@
+2026-07-04 01:03:38.817 [info] 
+
+
+
+
+2026-07-04 01:03:38.818 [info] Extension host agent started.
+2026-07-04 01:03:38.837 [info] Started initializing default profile extensions in extensions installation folder. file:///home/csapp/.local/share/code-server/extensions
+2026-07-04 01:03:38.893 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/csapp/.local/share/code-server/extensions
+2026-07-04 01:03:46.105 [info] [192.168.65.1][f929890b][ManagementConnection] New connection established.
+2026-07-04 01:03:46.148 [warning] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: libsecret-1.so.0: cannot open shared object file: No such file or directory
+2026-07-04 01:03:46.587 [info] [192.168.65.1][fa6b063d][ExtensionHostConnection] New connection established.
+2026-07-04 01:03:46.943 [info] [192.168.65.1][fa6b063d][ExtensionHostConnection] <1015> Launched Extension Host Process.
+2026-07-04 01:04:44.172 [info] [192.168.65.1][f929890b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2026-07-04 01:04:44.238 [info] [192.168.65.1][fa6b063d][ExtensionHostConnection] <1015> Extension Host Process exited with code: 0, signal: null.
+2026-07-04 01:04:44.946 [info] [192.168.65.1][be0a2076][ManagementConnection] New connection established.
+2026-07-04 01:04:45.316 [info] [192.168.65.1][22fe1b55][ExtensionHostConnection] New connection established.
+2026-07-04 01:04:45.323 [info] [192.168.65.1][22fe1b55][ExtensionHostConnection] <2515> Launched Extension Host Process.
