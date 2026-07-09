@@ -242,7 +242,11 @@ int absVal(int x) {
  *   Rating: 4
  */
 int bitCount(int x) {
-  return 2 ;
+  int m4 = 0x1 | (0x1 << 8) | (0x1 << 16) | (0x1 << 24);
+  int m1 = 0xFF; 
+  int s4 = (x&m4) + ((x>>1) &m4) + ((x>>2)&m4) + ((x>>3)&m4) + ((x>>4)&m4) + ((x>>5)&m4) + ((x>>6)&m4) + ((x>>7)&m4);
+  int s1 = (s4&m1) + ((s4>>8)&m1) + ((s4>>16)&m1) + ((s4>>24)&m1);
+  return s1; 
 }
 /* 
  * byteSwap - swaps the nth byte and the mth byte
@@ -254,7 +258,10 @@ int bitCount(int x) {
  *  Rating: 2
  */
 int byteSwap(int x, int n, int m) {
-    return 2;
+  unsigned char *x_bytes = (unsigned char*)&x, tmp = x_bytes[n];
+  x_bytes[n] = x_bytes[m];
+  x_bytes[m] = tmp; 
+  return x;
 }
 /* 
  * bang - Compute !x without using !
@@ -264,7 +271,7 @@ int byteSwap(int x, int n, int m) {
  *   Rating: 4 
  */
 int bang(int x) {
-  return 2;
+  return ((x | (~x + 1)) >> 31) + 1;
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -273,7 +280,7 @@ int bang(int x) {
  *   Rating: 1
  */
 int tmin(void) {
-  return 2;
+  return 1 << 31; // equal to 1 * (2**31)
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -283,7 +290,11 @@ int tmin(void) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+  int diff_sgn = !(x >> 31) ^!(y >> 31); //is 1 when signs are different
+  int a = diff_sgn & (x >> 31); //diff signs and x is neg, gives 1
+  int b = !diff_sgn & !((y + (~x+1)) >> 31); //same signs and difference is pos or = 0, gives 1
+  int f = a | b;  
+  return f;
 }
 /* 
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
@@ -294,7 +305,10 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 2
  */
 int divpwr2(int x, int n) {
-    return 2;
+  int sign = (x >> 31) & 1; 
+  int bias = (sign << n) + ~sign + 1;
+  return (x + bias) >> n; 
+  
 }
 /* 
  * negate - return -x 
@@ -304,7 +318,8 @@ int divpwr2(int x, int n) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  return (~x + 1); // Two's compliment Principle. 
+  // This question is...trivial.
 }
 /* 
  * greatestBitPos - return a mask that marks the position of the
