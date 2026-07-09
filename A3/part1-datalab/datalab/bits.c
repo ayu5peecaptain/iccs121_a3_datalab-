@@ -208,8 +208,8 @@ int minusOne(void) {
  *   Rating: 3
  */
 int bitMask(int highbit, int lowbit) {
-
-  return 2;
+  int i = ~0;
+  return ~(i << highbit << 1) & (i << lowbit);
 }
 /* 
  * getByte - Extract byte n from word x
@@ -220,7 +220,7 @@ int bitMask(int highbit, int lowbit) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-  return 2;
+  return ((x >> (n << 3)) & 0xff);  // use << 3 to avoid *8  -> 2^3
 }
 /* 
  * absVal - absolute value of x
@@ -231,7 +231,8 @@ int getByte(int x, int n) {
  *   Rating: 4
  */
 int absVal(int x) {
-  return 2;
+  int mask = x >> 31;
+  return (x + mask) ^ mask;
 }
 /*
  * bitCount - returns count of number of 1's in word
@@ -241,7 +242,7 @@ int absVal(int x) {
  *   Rating: 4
  */
 int bitCount(int x) {
-  return 2;
+  return 2 ;
 }
 /* 
  * byteSwap - swaps the nth byte and the mth byte
