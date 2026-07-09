@@ -1,7 +1,7 @@
 /* 
  * CS:APP Data Lab 
  * 
- * <Please put your name and userid here>
+ * Thatchaphon Panyajamorn 6781573 
  * 
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -175,7 +175,7 @@ NOTES:
  *  Rating: 2
  */
 int sign(int x) {
-    return 2;
+    return ((!!x) | (x >> 31));
 }
 /* 
  * anyEvenBit - return 1 if any even-numbered bit in word set to 1
@@ -185,7 +185,7 @@ int sign(int x) {
  *   Rating: 2
  */
 int anyEvenBit(int x) {
-  return 2;
+  return 0 != (x & 0x55555555); // Assuming it's 32-bit int. 
 }
 /* 
  * minusOne - return a value of -1 
@@ -193,8 +193,9 @@ int anyEvenBit(int x) {
  *   Max ops: 2
  *   Rating: 1
  */
-int minusOne(void) {
-  return 2;
+int minusOne(void) { 
+  int i = ~0; // 0 in binary is 0000. Flip all the 0s to 1s represent -1 in two's compliment.
+  return i;
 }
 /* 
  * bitMask - Generate a mask consisting of all 1's 
@@ -207,6 +208,7 @@ int minusOne(void) {
  *   Rating: 3
  */
 int bitMask(int highbit, int lowbit) {
+
   return 2;
 }
 /* 
