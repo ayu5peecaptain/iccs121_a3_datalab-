@@ -330,7 +330,18 @@ int negate(int x) {
  *   Rating: 4 
  */
 int greatestBitPos(int x) {
-  return 2;
+  // return log(2) of n
+  unsigned int m; 
+  m = x; 
+  m = m | m >> 1;
+  m = m | m >> 2;
+  m = m | m >> 4;
+  m = m | m >> 8;
+  m = m | m >> 16;
+  m = m & ((~m >> 1)^0x80000000); 
+  return m; 
+
+   
 }
 /* 
  * isPositive - return 1 if x > 0, return 0 otherwise 
@@ -340,5 +351,5 @@ int greatestBitPos(int x) {
  *   Rating: 3
  */
 int isPositive(int x) {
-  return 2;
+  return (!!x) & (!((x >> 31) & 1)); 
 }
