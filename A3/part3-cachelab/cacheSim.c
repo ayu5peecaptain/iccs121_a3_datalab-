@@ -90,7 +90,7 @@ void insertL2(u_int32_t address,unsigned char block[16])
 	}
 	// Overwrite that way w/ the new block 
 	L2_cache[setID][victim].tag = tag; 
-	// copy 'block' into L1_cache[setID][victim].data
+	// copy 'block' into L2_cache[setID][victim].data
 	for (int i = 0; i < 16; i++) {
     	L2_cache[setID][victim].data[i] = block[i];
 }
@@ -246,6 +246,7 @@ void write(u_int32_t address, u_int32_t data)
 
 int main()
 {
+	
 	init_DRAM();
 	cacheAccess buffer;
 	int timeTaken=0;
