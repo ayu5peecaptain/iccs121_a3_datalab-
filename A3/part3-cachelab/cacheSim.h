@@ -29,6 +29,7 @@ long cycles;
 void init_DRAM();
 
 
+
 // This function print the content of the cache in the following format for an N-way cache with M Sets
 // Set 0   : CB1 | CB2 | CB 3 | ... | CB N
 // Set 1   : CB1 | CB2 | CB 3 | ... | CB N
@@ -56,4 +57,6 @@ u_int32_t read_fifo(u_int32_t address);
 
 // EPart 3: handle write. Assuming a write-through cache. This is the only place you actually modify the data in the cache and DRAM
 void write(u_int32_t address, u_int32_t data);
+
+unsigned char readByte(u_int32_t address);
 

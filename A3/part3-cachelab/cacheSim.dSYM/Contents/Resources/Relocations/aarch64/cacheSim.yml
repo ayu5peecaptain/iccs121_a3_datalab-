@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/c_price_souls_126/Downloads/Tech/04_a3_docker_iccs121/A3/part3-cachelab/cacheSim'
+relocations:     []
+...
